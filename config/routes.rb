@@ -4,6 +4,10 @@ WebTechAssignment4::Application.routes.draw do
   resources :bands do 
   	get :search_names, :on => :collection
     post :search_names, :on => :collection
+    get :search_genres, :on => :collection
+    post :search_genres, :on => :collection
+    get :search_albums, :on => :collection
+    post :search_albums, :on => :collection
   end
 
   resources :genres

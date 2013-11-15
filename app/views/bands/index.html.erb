@@ -2,9 +2,32 @@
 	<h1 style="text-align:center">Bands</h1>
 	<p style="text-align:center"><%= link_to "Add New Band", new_band_path %></p>
 
-	<%= form_tag search_names_bands_path, class: 'form-search', id: 'name-search' do %>
-        <%= text_field_tag :name, params[:name], class: 'span2 search-query', id: 'name-query', placeholder: 'Search by Name' %>
-      <% end %>
+	<!-- inline display not happening -->
+	<ul style="display: inline; list-style-type: none; text-align:center" class="nav nav-pills">
+		<li>
+			<%= form_tag search_names_bands_path, class: 'form-search' do %>
+        		<%= text_field_tag :name, params[:name], class: 'span2', placeholder: 'Search by Name' %>
+    		<% end %>
+   		</li>
+   		<li>OR</li>
+   		<li>
+    		<%= form_tag search_genres_bands_path, class: 'form-search' do %>
+        		<%= label_tag "Search by Genre", "Search by Genre" %>
+        		<%= select_tag "genre_id", options_from_collection_for_select(@genres, :id, :title )%>
+        		<%= submit_tag "Search" %>
+    		<% end %>
+    	</li>
+    	<li>OR</li>
+   		<li>
+    		<%= form_tag search_albums_bands_path, class: 'form-search' do %>
+        		<%= label_tag "Search by Album", "Search by Album" %>
+        		<%= select_tag "album_id", options_from_collection_for_select(@albums, :id, :title )%>
+        		<%= submit_tag "Search" %>
+    		<% end %>
+    	</li>
+    </ul>
+
+      
 
 	<% @bands.each do |band| %>
 		<div style=" background-color:#D0D0D0; padding: 10px">

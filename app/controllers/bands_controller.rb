@@ -3,6 +3,8 @@ class BandsController < ApplicationController
 
   def index
   	@bands = Band.all.sort_by!{ |b| b.name }
+    @genres = Genre.all
+    @albums = Album.all
   end
 
   def show
@@ -46,4 +48,23 @@ class BandsController < ApplicationController
     end
   end
 
+  def search_genres
+    @bands = Band.where(genre_id: params[:genre_id])
+    @genre = Genre.find(params[:genre_id]).title
+    if @bands.empty?
+      @found = false
+    else
+      @found = true
+    end
+  end
+
+  def search_albums
+    album = Album.find(params[:album_id])
+    band = Band.find(album.band_id)
+    if band.present? 
+      redirect_to band_path(band)
+    else 
+      @album = album.name
+    end
+  end
 end

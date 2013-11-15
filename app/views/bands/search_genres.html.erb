@@ -1,0 +1,39 @@
+<div style="padding:20px">
+	<p><%= link_to "Back to Bands Index", bands_path %></p>
+	<% if @found %>
+		<% @bands.each do |band| %>
+			<div style=" background-color:#D0D0D0; padding: 10px">
+				<h2 style="text-decoration:underline; margin-bottom:0"><%= link_to band.name, band_path(band) %></h2>
+				<div style="margin: 5px 0 0 0">
+					<b>Genre: </b><%= link_to band.genre.title, genre_path(band.genre) %>
+				</div>
+				<% if band.description.present? %>
+					<div style="margin-top:5px" >
+						<b>Description: </b><%= band.description %>
+					</div>
+				<% end %>
+				<div style="margin-top:5px">
+					<b>Members: </b>
+					<% band.artists.each do |artist| %>
+						<%= link_to artist.name, artist_path(artist) %>
+					<% end %>
+				</div>
+				<div style="margin-top:5px">
+					<b>Albums: </b>
+					<% band.albums.each do |album| %>
+						<%= link_to album.title, album_path(album) %>
+					<% end %>
+				</div>
+				<div style="margin-top:5px">
+					<b>Shows: </b>
+					<% band.shows.each do |show| %>
+						<%= link_to show.title, show_path(show) %>
+					<% end %>
+				</div>
+			</div>
+			<br><br><br>
+		<% end %>
+	<% else %>
+		No band matched your search filter of genre: <%= @genre %>
+	<% end %>
+</div>
