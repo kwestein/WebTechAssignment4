@@ -1,4 +1,4 @@
-class Band < ActiveRecord::
+class Band < ActiveRecord::Base
 	belongs_to :genre
 	has_many :artists, dependent: :destroy
 	has_many :albums, dependent: :destroy

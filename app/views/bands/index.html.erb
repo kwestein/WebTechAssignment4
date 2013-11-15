@@ -1,0 +1,35 @@
+<div style="padding:20px;">
+	<h1 style="text-align:center">Bands</h1>
+	<% @bands.each do |band| %>
+		<div style=" background-color:#D0D0D0; padding: 10px">
+			<h2 style="text-decoration:underline; margin-bottom:0"><%= band.name %></h2>
+			<div style="margin: 5px 0 0 0">
+				<b>Genre: </b><%= band.genre.title %>
+			</div>
+			<% if band.description.present? %>
+				<div style="margin-top:5px" >
+					<b>Description: </b><%= band.description %>
+				</div>
+			<% end %>
+			<div style="margin-top:5px">
+				<b>Members: </b>
+				<% band.artists.each do |artist| %>
+					<%= artist.name %>
+				<% end %>
+			</div>
+			<div style="margin-top:5px">
+				<b>Albums: </b>
+				<% band.albums.each do |album| %>
+					<%= album.title %>
+				<% end %>
+			</div>
+			<div style="margin-top:5px">
+				<b>Shows: </b>
+				<% band.shows.each do |show| %>
+					<%= show.title %>
+				<% end %>
+			</div>
+		</div>
+		<br><br><br>
+	<% end %>
+</div>
