@@ -1,0 +1,28 @@
+<div>
+  <%= form_for @album, html: {class: 'form form-horizontal'} do |f| %>
+    <fieldset>
+      <div class="control-group">
+        <%= f.label :title, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :title, class: 'span6' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label "Band", class: 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select(:band_id, @bands, :id, :name) %><%= link_to "Add new band", new_band_path %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :release_date, class: 'control-label' %>
+        <div class="controls">
+          <%= f.datetime_select :release_date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
+        </div>
+      </div>
+      <!-- songs -->
+      
+    <fieldset>
+      <%= f.submit "Update Album", class: "btn btn-primary" %> <%= link_to "Cancel", album_path(@album) %>
+    </fieldset>
+  <% end %>
+</div>

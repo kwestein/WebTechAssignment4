@@ -1,0 +1,17 @@
+<%= link_to "Back to Bands Index", bands_path %>
+<h1 style="text-align:center"><%= @genre.title %></h1>
+<p style="text-align:center">
+	<%= link_to "Edit", edit_genre_path(@genre) %>
+	<% if @genre.bands.count == 0 %>
+		 / <%= link_to "Delete", genre_path(@genre), method: :delete, data: { confirm: 'Are you sure you want to delete this genre?' } %>
+	<% end %>
+</p>
+<b>Description: </b><%= @genre.description %>
+<% if @genre.bands.count > 0 %>
+	<p><b>Bands in this genre: </b></p>
+	<ul>
+		<% @genre.bands.each do |band| %>
+			<li><%= link_to band.name, band_path(band) %></li>
+		<% end %>
+	</ul>
+<% end %>

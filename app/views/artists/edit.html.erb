@@ -1,0 +1,45 @@
+<div>
+  <%= form_for @artist, html: {class: 'form form-horizontal'} do |f| %>
+    <fieldset>
+      <div class="control-group">
+        <%= f.label :name, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :name, class: 'span6' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :biography, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_area :biography, rows: 5, class: 'span6' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :role, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :role, rows: 5, class: 'span6' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :birthday, class: 'control-label' %>
+        <div class="controls">
+          <%= f.datetime_select :birthday, { include_blank: true, start_year: 1920, end_year: 2013 } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :join_date, class: 'control-label' %>
+        <div class="controls">
+          <%= f.datetime_select :join_date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label "Band", class: 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select(:band_id, @bands, :id, :name) %>
+        </div>
+      </div>
+      
+    <fieldset>
+      <%= f.submit "Update Artist", class: "btn btn-primary" %> <%= link_to "Cancel", artist_path(@artist) %>
+    </fieldset>
+  <% end %>
+</div>

@@ -1,0 +1,37 @@
+<div>
+  <%= form_for @band, html: {class: 'form form-horizontal'} do |f| %>
+    <fieldset>
+      <div class="control-group">
+        <%= f.label :name, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :name, class: 'span6' %>
+        </div>
+      </div>
+      <% if @band.description.present? %>
+        <div class="control-group">
+          <%= f.label :description, class: 'control-label' %>
+          <div class="controls">
+            <%= f.text_area :description, rows: 5, class: 'span6' %>
+          </div>
+        </div>
+      <% end %>
+      <div class="control-group">
+        <%= f.label :genre, class: 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select(:genre_id, @genres, :id, :title) %><%= link_to "Add new genre", new_genre_path %>
+        </div>
+      </div>
+      <div class="members">
+        <%= f.label "Members", class: 'control-label' %>
+        <% @band.artists.each do |artist| %>
+          <div class="member">
+            <%= artist.name %>  <%= link_to "Edit", edit_artist_path(artist) %>
+          </div>
+        <% end %>
+      </div>
+      
+    <fieldset>
+      <%= f.submit "Update Band", class: "btn btn-primary" %> <%= link_to "Cancel", band_path(@band) %>
+    </fieldset>
+  <% end %>
+</div>

@@ -1,10 +1,11 @@
 <div style="padding:20px;">
 	<h1 style="text-align:center">Bands</h1>
+	<p style="text-align:center"><%= link_to "Add New Band", new_band_path %>
 	<% @bands.each do |band| %>
 		<div style=" background-color:#D0D0D0; padding: 10px">
-			<h2 style="text-decoration:underline; margin-bottom:0"><%= band.name %></h2>
+			<h2 style="text-decoration:underline; margin-bottom:0"><%= link_to band.name, band_path(band) %></h2>
 			<div style="margin: 5px 0 0 0">
-				<b>Genre: </b><%= band.genre.title %>
+				<b>Genre: </b><%= link_to band.genre.title, genre_path(band.genre) %>
 			</div>
 			<% if band.description.present? %>
 				<div style="margin-top:5px" >
@@ -14,19 +15,19 @@
 			<div style="margin-top:5px">
 				<b>Members: </b>
 				<% band.artists.each do |artist| %>
-					<%= artist.name %>
+					<%= link_to artist.name, artist_path(artist) %>
 				<% end %>
 			</div>
 			<div style="margin-top:5px">
 				<b>Albums: </b>
 				<% band.albums.each do |album| %>
-					<%= album.title %>
+					<%= link_to album.title, album_path(album) %>
 				<% end %>
 			</div>
 			<div style="margin-top:5px">
 				<b>Shows: </b>
 				<% band.shows.each do |show| %>
-					<%= show.title %>
+					<%= link_to show.title, show_path(show) %>
 				<% end %>
 			</div>
 		</div>

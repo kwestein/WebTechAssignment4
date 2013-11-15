@@ -1,0 +1,22 @@
+<div>
+  <%= form_for @genre, html: {class: 'form form-horizontal'} do |f| %>
+    <fieldset>
+      <div class="control-group">
+        <%= f.label :title, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :title, class: 'span6' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :description, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_area :description, rows: 5, class: 'span6' %>
+        </div>
+      </div>
+      
+    <fieldset>
+      <%= f.submit "Create Genre", class: "btn btn-primary" %> <%= link_to "Cancel", bands_path %>
+    </fieldset>
+      
+  <% end %>
+</div>
