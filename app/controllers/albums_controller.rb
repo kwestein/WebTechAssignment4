@@ -27,12 +27,13 @@ class AlbumsController < ApplicationController
 
 	def new
 		@album = Album.new
+		@new_album = Album.new
 		@bands = Band.all
 		@album.band_id = Band.find(params[:band_id]).id
 	end
 
 	def create
-		@album = Album.create(params.require(:album).permit(:title, :release_date, :band_id))
+		@album = Album.create(params.require(:album).permit(:title, :release_date, :band_id, songs_attributes: [ :id, :title, :ranking]))
 		redirect_to edit_band_path(@album.band)
 	end
 
