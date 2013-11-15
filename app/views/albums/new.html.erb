@@ -10,7 +10,7 @@
       <div class="control-group">
         <%= f.label "Band", class: 'control-label' %>
         <div class="controls">
-          <%= f.collection_select(:band_id, @bands, :id, :name) %><%= link_to "Add new band", new_band_path %>
+          <%= f.collection_select(:band_id, @bands, :id, :name) %>
         </div>
       </div>
       <div class="control-group">
@@ -19,7 +19,6 @@
           <%= f.datetime_select :release_date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
         </div>
       </div>
-      <!-- songs -->
       
     <fieldset>
       <%= f.submit "Create Album", class: "btn btn-primary" %> <%= link_to "Cancel", bands_path %>

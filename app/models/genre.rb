@@ -3,7 +3,7 @@ class Genre < ActiveRecord::Base
   	belongs_to :related_to, :class_name => 'Genre'
   	has_many :bands
 
-  	validates :title, :identification, uniqueness: true
+  	validates :title, uniqueness: true
   	validates :title, presence: true
 
 end

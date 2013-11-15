@@ -5,8 +5,14 @@ class ArtistsController < ApplicationController
 	end
 
 	def destroy
+		band = @artist.band
 		@artist.destroy
-		redirect_to bands_path
+		case params[:from]
+		when "edit_band"
+			redirect_to edit_band_path(band)
+		when nil
+			redirect_to bands_path
+		end
 	end
 
 	def edit
@@ -14,7 +20,7 @@ class ArtistsController < ApplicationController
 	end
 
 	def update
-		@artist.update_attributes(params.require(:artist).permit(:name, :biography, :birthday, :role, :join_date))
+		@artist.update_attributes(params.require(:artist).permit(:name, :biography, :birthday, :role, :join_date, :band_id))
 		redirect_to artist_path(@artist)
 	end
 
@@ -23,8 +29,14 @@ class ArtistsController < ApplicationController
 	end
 
 	def create
-		@artist = Artist.create(params.require(:artist).permit(:name, :biography, :birthday, :role, :join_date))
-		redirect_to artist_path(@artist)
+		@artist = Artist.create(params.require(:artist).permit(:name, :biography, :birthday, :role, :join_date, :band_id))
+		redirect_to edit_band_path(@artist.band)
+	end
+
+	def new
+		@artist = Artist.new
+		@artist.band_id = Band.find(params[:band_id]).id
+		@bands = Band.all
 	end
 
 	def load_artist

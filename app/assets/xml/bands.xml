@@ -23,9 +23,7 @@
 			Music that originates in traditional popular culture or that is written in such a style. Folk music is typically of unknown authorship
 		</description>
 	</genre>
-	<genre id="g2" title="Indie">
-		<related ref="g1"/>
-	</genre>
+	<genre id="g2" title="Indie"/>
 
 	<band id="b2" genre="g1">
 		<name>Tallest Man on Earth</name>

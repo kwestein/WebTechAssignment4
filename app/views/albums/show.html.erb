@@ -1,5 +1,4 @@
 <div style="padding:20px;">
-	<%= link_to "New album", new_album_path %>
 	<%= link_to "Back to Bands Index", bands_path %>
 	<div style=" background-color:#D0D0D0; padding: 10px">
 		<h2 style="text-decoration:underline; margin-bottom:0; text-align:center"><%= @album.title %></h2>
@@ -11,7 +10,7 @@
 			<b>Title: </b><%= @album.title %>
 		</div>
 		<div style="margin: 5px 0 0 0">
-			<b>Release Date: </b><%= @album.release_date.strftime("%B %d, %Y") %>
+			<b>Release Date: </b><%= @album.release_date.strftime("%B %d, %Y") if @album.release_date.present? %>
 		</div>
 		<div style="margin: 5px 0 0 0">
 			<b>Band: </b><%= @album.band.name %>

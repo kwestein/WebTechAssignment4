@@ -13,8 +13,8 @@
 	<b>Biography: </b><%= @artist.biography %>
 </p>
 <p>
-	<b>Birthday: </b><%= @artist.birthday.strftime("%B %d, %Y") %>
+	<b>Birthday: </b><%= @artist.birthday.strftime("%B %d, %Y") if @artist.birthday.present? %>
 </p>
 <p>
-	<b>Joined date: </b><%= @artist.join_date.strftime("%B %d, %Y") %>
+	<b>Joined date: </b><%= @artist.join_date.strftime("%B %d, %Y") if @artist.join_date.present? %>
 </p>

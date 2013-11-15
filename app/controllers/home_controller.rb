@@ -27,11 +27,6 @@ class HomeController < ApplicationController
 			current_genre.update_attributes(title: genre.at_xpath('@title').text)
 			description = genre.at_xpath('description')
 			current_genre.update_attributes(description: description.text.delete("\n").delete("\t")) if description.present?
-			related = genre.at_xpath('related')
-			if related.present?
-				related_genre = Genre.find_by_identification(related.at_xpath('@ref').text)
-				related_genre.related_genres.append(current_genre) if related_genre
-			end
 		end
 
 	    bands = doc.search('band')

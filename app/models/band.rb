@@ -4,6 +4,6 @@ class Band < ActiveRecord::Base
 	has_many :albums, dependent: :destroy
 	has_many :shows, dependent: :destroy
 
-	validates :name, :identification, uniqueness: true
+	validates :name, uniqueness: true
 	validates :name, presence: true
 end

@@ -1,0 +1,33 @@
+<div>
+  <%= form_for @show, html: {class: 'form form-horizontal'} do |f| %>
+    <fieldset>
+      <div class="control-group">
+        <%= f.label :title, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :title, class: 'span6' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :date, class: 'control-label' %>
+        <div class="controls">
+          <%= f.datetime_select :date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :venue, class: 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select(:location_id, @locations, :id, :venue) %><%= link_to "Add new location", new_location_path %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :performer, class: 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select(:band_id, @bands, :id, :name) %>
+        </div>
+      </div>
+      
+    <fieldset>
+      <%= f.submit "Create Show", class: "btn btn-primary" %> <%= link_to "Cancel", band_path(@show.band) %>
+    </fieldset>
+  <% end %>
+</div>
