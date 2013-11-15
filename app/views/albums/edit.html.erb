@@ -24,16 +24,10 @@
       <%= f.fields_for :songs, @album.songs do |q| %>
         <div class="song">
           <div class="control-group">
-            <%= q.label :title, class: 'control-label' %>
-            <div class="controls">
-              <%= q.text_field :title, class: 'span6' %>
-            </div>
-          </div>
-          <div class="control-group">
-            <%= q.label :ranking, class: 'control-label' %>
-            <div class="controls">
-              <%= q.text_field :ranking, class: 'span6' %>
-            </div>
+            <%= q.label :title, class: 'control-label' %>: 
+            <%= q.text_field :title, class: 'span6' %> 
+            <%= q.label :ranking, class: 'control-label' %>: 
+            <%= q.text_field :ranking, class: 'span6' %>
           </div>
         </div>
       <% end %>
@@ -52,16 +46,10 @@
     <%= f.fields_for :songs do |q| %>
       <div id='song-template'>
         <div class="control-group">
-          <%= q.label :title, class: 'control-label' %>
-          <div class="controls">
-            <%= q.text_field :title, class: 'span6' %>
-          </div>
-        </div>
-        <div class="control-group">
-          <%= q.label :ranking, class: 'control-label' %>
-          <div class="controls">
-            <%= q.text_field :ranking, class: 'span6' %>
-          </div>
+          <%= q.label :title, class: 'control-label' %>: 
+          <%= q.text_field :title, class: 'span6' %> 
+          <%= q.label :ranking, class: 'control-label' %>: 
+          <%= q.text_field :ranking, class: 'span6' %>
         </div>
       </div>
     <% end %>

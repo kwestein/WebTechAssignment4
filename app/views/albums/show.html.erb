@@ -18,7 +18,11 @@
 		<b><u>Songs:</u></b>
 		<ul>
 			<% @album.songs.each do |song| %>
-				<li><%= "#{song.title}, ranking: #{song.ranking}" %></li>
+				<li><%= song.title %>
+					<% if song.ranking.present? %>
+						<%= ", ranking: #{song.ranking}" %>
+					<% end %>
+				</li>
 			<% end %>
 		</ul>
 	</div>
