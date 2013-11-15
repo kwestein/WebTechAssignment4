@@ -37,4 +37,13 @@ class BandsController < ApplicationController
   	@band = Band.find(params[:id])
   end
 
+  def search_names
+    band = Band.find_by_name(params[:name])
+    if band.present? 
+      redirect_to band_path(band)
+    else 
+      @name = params[:name]
+    end
+  end
+
 end

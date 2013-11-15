@@ -1,6 +1,11 @@
 <div style="padding:20px;">
 	<h1 style="text-align:center">Bands</h1>
-	<p style="text-align:center"><%= link_to "Add New Band", new_band_path %>
+	<p style="text-align:center"><%= link_to "Add New Band", new_band_path %></p>
+
+	<%= form_tag search_names_bands_path, class: 'form-search', id: 'name-search' do %>
+        <%= text_field_tag :name, params[:name], class: 'span2 search-query', id: 'name-query', placeholder: 'Search by Name' %>
+      <% end %>
+
 	<% @bands.each do |band| %>
 		<div style=" background-color:#D0D0D0; padding: 10px">
 			<h2 style="text-decoration:underline; margin-bottom:0"><%= link_to band.name, band_path(band) %></h2>

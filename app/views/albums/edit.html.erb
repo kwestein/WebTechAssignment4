@@ -19,10 +19,51 @@
           <%= f.datetime_select :release_date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
         </div>
       </div>
-      <!-- songs -->
+      <h4>Songs</h4>
+      <div class="songs">
+      <%= f.fields_for :songs, @album.songs do |q| %>
+        <div class="song">
+          <div class="control-group">
+            <%= q.label :title, class: 'control-label' %>
+            <div class="controls">
+              <%= q.text_field :title, class: 'span6' %>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= q.label :ranking, class: 'control-label' %>
+            <div class="controls">
+              <%= q.text_field :ranking, class: 'span6' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <a href="javascript:void(0)" id="new-song">Add new song</a>
       
     <fieldset>
       <%= f.submit "Update Album", class: "btn btn-primary" %> <%= link_to "Cancel", album_path(@album) %>
     </fieldset>
+  <% end %>
+</div>
+
+<div style="display:none">
+  <% add_song(@new_album) %>
+  <%= form_for @new_album do |f| %>
+    <%= f.fields_for :songs do |q| %>
+      <div id='song-template'>
+        <div class="control-group">
+          <%= q.label :title, class: 'control-label' %>
+          <div class="controls">
+            <%= q.text_field :title, class: 'span6' %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= q.label :ranking, class: 'control-label' %>
+          <div class="controls">
+            <%= q.text_field :ranking, class: 'span6' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

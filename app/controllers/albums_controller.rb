@@ -11,6 +11,7 @@ class AlbumsController < ApplicationController
 
 	def edit
 		@bands = Band.all
+		@new_album = Album.new
 	end
 
 	def update
@@ -20,7 +21,6 @@ class AlbumsController < ApplicationController
 
 	def new
 		@album = Album.new
-		@new_album = Album.new
 		@bands = Band.all
 	end
 
