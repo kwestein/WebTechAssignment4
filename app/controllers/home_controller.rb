@@ -1,4 +1,4 @@
-require 'Nokogiri'
+require 'nokogiri'
 
 class HomeController < ApplicationController
 	def index
