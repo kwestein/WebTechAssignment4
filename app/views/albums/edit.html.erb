@@ -29,6 +29,7 @@
             <%= q.text_field :title, class: 'span6' %> 
             <%= q.label :ranking, class: 'control-label' %>: 
             <%= q.text_field :ranking, class: 'span6' %>
+            <%= link_to "Delete", song_path(q.object), method: :delete, data: { confirm: 'Are you sure you want to delete this song?' } %>
           </div>
         </div>
       <% end %>

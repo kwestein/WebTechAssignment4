@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
 	end
 
 	def update
-		@album.update_attributes(params.require(:album).permit(:title, :release_date, :band_id, songs_attributes: [ :id, :title, :ranking]))
+		@album.update_attributes(params.require(:album).permit(:title, :release_date, :band_id, songs_attributes: [ :id, :title, :ranking ]))
 		redirect_to album_path(@album)
 	end
 
@@ -33,7 +33,7 @@ class AlbumsController < ApplicationController
 	end
 
 	def create
-		@album = Album.create(params.require(:album).permit(:title, :release_date, :band_id, songs_attributes: [ :id, :title, :ranking]))
+		@album = Album.create(params.require(:album).permit(:title, :release_date, :band_id, songs_attributes: [ :id, :title, :ranking ]))
 		redirect_to edit_band_path(@album.band)
 	end
 
