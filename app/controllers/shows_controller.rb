@@ -12,11 +12,13 @@ class ShowsController < ApplicationController
 
 	def update
 		@show.update_attributes(params.require(:show).permit(:title, :date, :venue, :location_id, :band_id))
+		writeToXML
 		redirect_to show_path(@show)
 	end
 
 	def destroy
 		@show.destroy
+		writeToXML
 		case params[:from]
 		when "edit_band"
 			redirect_to edit_band_path(@show.band)
@@ -34,6 +36,7 @@ class ShowsController < ApplicationController
 
 	def create
 		@show = Show.create(params.require(:show).permit(:title, :date, :venue, :location_id, :band_id))
+		writeToXML
 		redirect_to edit_band_path(@show.band)
 	end
 

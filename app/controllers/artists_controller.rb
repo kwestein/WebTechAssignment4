@@ -7,6 +7,7 @@ class ArtistsController < ApplicationController
 	def destroy
 		band = @artist.band
 		@artist.destroy
+		writeToXML
 		case params[:from]
 		when "edit_band"
 			redirect_to edit_band_path(band)
@@ -21,6 +22,7 @@ class ArtistsController < ApplicationController
 
 	def update
 		@artist.update_attributes(params.require(:artist).permit(:name, :biography, :birthday, :role, :join_date, :band_id))
+		writeToXML
 		redirect_to artist_path(@artist)
 	end
 
@@ -30,6 +32,7 @@ class ArtistsController < ApplicationController
 
 	def create
 		@artist = Artist.create(params.require(:artist).permit(:name, :biography, :birthday, :role, :join_date, :band_id))
+		writeToXML
 		redirect_to edit_band_path(@artist.band)
 	end
 

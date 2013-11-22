@@ -7,6 +7,7 @@ class SongsController < ApplicationController
 	  @song = Song.find(params[:id])
 	  album = @song.album
 	  @song.destroy
+	  writeToXML
 	  redirect_to edit_album_path(album)
 	end
 end

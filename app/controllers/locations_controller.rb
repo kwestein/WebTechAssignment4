@@ -7,6 +7,7 @@ class LocationsController < ApplicationController
 
 	def create
 		@location = Location.create(params.require(:location).permit(:venue, :street_address, :city, :country, :continent))
+		writeToXML
 		redirect_to location_path(@location)
 	end
 
@@ -19,6 +20,7 @@ class LocationsController < ApplicationController
 
 	def update
 		@location.update_attributes(params.require(:location).permit(:venue, :street_address, :city, :country, :continent))
+		writeToXML
 		redirect_to location_path(@location)
 	end
 
@@ -28,6 +30,7 @@ class LocationsController < ApplicationController
 
 	def destroy
 		@location.destroy
+		writeToXML
 		redirect_to bands_path
 	end
 end

@@ -27,8 +27,7 @@
     	</li>
     </ul>
 
-      
-
+    <span style="text-align:center"><%= will_paginate @bands %></span>
 	<% @bands.each do |band| %>
 		<div style=" background-color:#D0D0D0; padding: 10px">
 			<h2 style="text-decoration:underline; margin-bottom:0"><%= link_to band.name, band_path(band) %></h2>

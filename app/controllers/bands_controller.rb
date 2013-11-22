@@ -2,7 +2,7 @@ class BandsController < ApplicationController
 	before_filter :load_band, only: [:show, :update, :edit, :destroy]
 
   def index
-  	@bands = Band.all.sort_by!{ |b| b.name }
+    @bands = Band.paginate(:page => params[:page], :per_page => 2)
     @genres = Genre.all
     @albums = Album.all
   end
@@ -17,11 +17,13 @@ class BandsController < ApplicationController
 
   def update
   	@band.update_attributes(params.require(:band).permit(:name, :description, :genre_id, artists_attributes: [ :id, :name, :biography, :role, :birthday, :join_date, :_destroy ]))
+    writeToXML
 	  redirect_to band_path(@band)
   end
 
   def destroy
   	@band.destroy
+    writeToXML
   	redirect_to bands_path
   end
 
@@ -32,6 +34,7 @@ class BandsController < ApplicationController
 
   def create
     @genre = Band.create(params.require(:band).permit(:name, :description, :genre_id))
+    writeToXML
     redirect_to band_path(@genre)
   end
 

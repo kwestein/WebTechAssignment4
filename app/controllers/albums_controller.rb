@@ -7,6 +7,7 @@ class AlbumsController < ApplicationController
 	def destroy
 		band = @album.band
 		@album.destroy
+		writeToXML
 		case params[:from]
 		when "edit_band"
 			redirect_to edit_band_path(band)
@@ -22,6 +23,7 @@ class AlbumsController < ApplicationController
 
 	def update
 		@album.update_attributes(params.require(:album).permit(:title, :release_date, :band_id, songs_attributes: [ :id, :title, :ranking ]))
+		writeToXML
 		redirect_to album_path(@album)
 	end
 
@@ -34,6 +36,7 @@ class AlbumsController < ApplicationController
 
 	def create
 		@album = Album.create(params.require(:album).permit(:title, :release_date, :band_id, songs_attributes: [ :id, :title, :ranking ]))
+		writeToXML
 		redirect_to edit_band_path(@album.band)
 	end
 

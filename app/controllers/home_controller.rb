@@ -1,9 +1,7 @@
-require 'nokogiri'
-
 class HomeController < ApplicationController
 	def index
 		xsd = Nokogiri::XML::Schema(File.read(Rails.root.join('app/assets/xml/bands.xsd')))
-		doc = Nokogiri::XML(File.read(Rails.root.join('app/assets/xml/bands.xml')))
+		doc = Nokogiri::XML(File.read(Rails.root.join('app/assets/xml/bandsOriginal.xml')))
 		contains_errors = false
 		@errors = []
 		xsd.validate(doc).each do |error|

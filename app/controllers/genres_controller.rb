@@ -7,6 +7,7 @@ class GenresController < ApplicationController
 
 	def destroy
 		@genre.destroy
+		writeToXML
 		redirect_to bands_path
 	end
 
@@ -15,6 +16,7 @@ class GenresController < ApplicationController
 
 	def update
 		@genre.update_attributes(params.require(:genre).permit(:title, :description))
+		writeToXML
 		redirect_to genre_path(@genre)
 	end
 
@@ -24,6 +26,7 @@ class GenresController < ApplicationController
 
 	def create
 		@genre = Genre.create(params.require(:genre).permit(:title, :description))
+		writeToXML
 		redirect_to genre_path(@genre)
 	end
 
