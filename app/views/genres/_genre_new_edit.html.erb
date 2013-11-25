@@ -1,0 +1,23 @@
+<div>
+  <%= link_to "Back to Bands Index", bands_path %>
+  <%= form_for @genre, html: {class: 'form form-horizontal'} do |f| %>
+    <fieldset>
+      <div>
+        <%= f.label :title %>
+        <div>
+          <%= f.text_field :title %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :description %>
+        <div>
+          <%= f.text_area :description, rows: 5 %>
+        </div>
+      </div>
+      
+    <fieldset>
+      <%= f.submit edit ? "Update Genre" : "Create Genre", class: "btn btn-primary" %> <%= link_to "Cancel", bands_path %>
+    </fieldset>
+      
+  <% end %>
+</div>

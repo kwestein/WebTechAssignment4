@@ -22,13 +22,13 @@
     <name>The Lumineers</name>
     <artist id="a2">
       <name>Neyla Pekarek</name>
-      <biography>        I have a teaching degree to teach music. I always wanted to be a choir teacher. I met the guys shortly after I graduated and I was looking for something to keep me busy before landing a teaching job. I answered a Craigslist ad, which is something I'd never do. I was feeling reckless, I guess.      </biography>
+      <biography>I have a teaching degree to teach music. I always wanted to be a choir teacher. I met the guys shortly after I graduated and I was looking for something to keep me busy before landing a teaching job. I answered a Craigslist ad, which is something I'd never do. I was feeling reckless, I guess.      </biography>
       <birthday>
         <day>3</day>
         <month>6</month>
         <year>1988</year>
       </birthday>
-      <role>Cellist</role>
+      <role>Cellisto</role>
       <join_date>
         <day>21</day>
         <month>7</month>
@@ -50,20 +50,27 @@
         <year>2008</year>
       </join_date>
     </artist>
+    <album id="">
+      <title>asfgasfg</title>
+      <song id="" performedBy="b1">
+        <title>sdf</title>
+        <ranking>2</ranking>
+      </song>
+    </album>
     <album id="al1">
-      <title>The Lumineers</title>
+      <title>The Lumineerss</title>
       <release_date>
         <day>3</day>
         <month>4</month>
         <year>2012</year>
       </release_date>
-      <song id="s1" performedBy="b1">
-        <title>Dead Sea</title>
-        <ranking>1</ranking>
-      </song>
       <song id="s2" performedBy="b1">
         <title>Slow it Down</title>
         <ranking>4</ranking>
+      </song>
+      <song id="s1" performedBy="b1">
+        <title>Dead Sea</title>
+        <ranking>2</ranking>
       </song>
     </album>
     <show id="u1" location="l1">

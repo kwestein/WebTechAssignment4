@@ -26,10 +26,6 @@ class ArtistsController < ApplicationController
 		redirect_to artist_path(@artist)
 	end
 
-	def new
-		@artist = Artist.new
-	end
-
 	def create
 		@artist = Artist.create(params.require(:artist).permit(:name, :biography, :birthday, :role, :join_date, :band_id))
 		writeToXML
@@ -38,7 +34,7 @@ class ArtistsController < ApplicationController
 
 	def new
 		@artist = Artist.new
-		@artist.band_id = Band.find(params[:band_id]).id
+		@artist.band_id = Band.find(params[:band_id]).id if params[:band_id].present?
 		@bands = Band.all
 	end
 

@@ -1,0 +1,34 @@
+<div>
+  <%= link_to "Back to Bands Index", bands_path %>
+  <%= form_for @show, html: {class: 'form form-horizontal'} do |f| %>
+    <fieldset>
+      <div>
+        <%= f.label :title %>
+        <div>
+          <%= f.text_field :title %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :date %>
+        <div>
+          <%= f.datetime_select :date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :venue %>
+        <div>
+          <%= f.collection_select(:location_id, @locations, :id, :venue) %><%= link_to "Add new location", new_location_path %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :performer %>
+        <div>
+          <%= f.collection_select(:band_id, @bands, :id, :name) %>
+        </div>
+      </div>
+      
+    <fieldset>
+      <%= f.submit edit ? "Update Show" : "Create Show", class: "btn btn-primary" %> <%= link_to "Cancel", bands_path %>
+    </fieldset>
+  <% end %>
+</div>

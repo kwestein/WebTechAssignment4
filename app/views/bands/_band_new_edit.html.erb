@@ -1,0 +1,122 @@
+<div>
+  <%= link_to "Back to Bands Index", bands_path %>
+  <%= form_for @band, html: {class: 'form form-horizontal'} do |f| %>
+    <fieldset>
+      <div>
+        <%= f.label :name %>
+        <div>
+          <%= f.text_field :name %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :description %>
+        <div>
+          <%= f.text_area :description, rows: 5 %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :genre %>
+        <div>
+          <%= f.collection_select(:genre_id, @genres, :id, :title) %><%= link_to "Add new genre", new_genre_path %>
+        </div>
+      </div>
+
+      <h4>Members</h4>
+      <% @band.artists.each do |artist| %>
+          <div>
+            <%= artist.name %>  <%= link_to "Edit", edit_artist_path(artist) %> / <%= link_to "Delete", artist_path(artist, from: "edit_band"), method: :delete, data: { confirm: 'Are you sure you want to delete this artist?' } %>
+          </div>
+      <% end %>
+      <div class="members">
+        <%= f.fields_for :artists, @band.artists do |q| %>
+          <div class="member">
+            <fieldset>
+              <div>
+                <%= q.label :name %>
+                <div>
+                  <%= q.text_field :name %>
+                </div>
+              </div>
+              <div>
+                <%= q.label :biography %>
+                <div>
+                  <%= q.text_area :biography, rows: 5 %>
+                </div>
+              </div>
+              <div>
+                <%= q.label :role %>
+                <div>
+                  <%= q.text_field :role, rows: 5 %>
+                </div>
+              </div>
+              <div>
+                <%= q.label :birthday %>
+                <div>
+                  <%= q.datetime_select :birthday, { include_blank: true, start_year: 1920, end_year: 2013 } %>
+                </div>
+              </div>
+              <div>
+                <%= q.label :join_date %>
+                <div>
+                  <%= q.datetime_select :join_date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
+                </div>
+              </div>
+              
+            </fieldset>
+          </div>
+        <% end %>
+      <div>
+        <%= link_to "Add member", new_artist_path(band_id: @band.id) %>
+      </div>
+
+      <h4>Albums</h4>
+      <% @band.albums.each do |album| %>
+          <div>
+            <%= album.title %>  <%= link_to "Edit", edit_album_path(album) %> / <%= link_to "Delete", album_path(album, from: "edit_band"), method: :delete, data: { confirm: 'Are you sure you want to delete this album?' } %>
+          </div>
+      <% end %>
+      <div>
+        <%= link_to "Add album", new_album_path(band_id: @band.id) %>
+      </div>
+
+      <h4>Shows</h4>
+      <% @band.shows.each do |show| %>
+          <div>
+            <%= show.title %>  <%= link_to "Edit", edit_show_path(show) %> / <%= link_to "Delete", show_path(show, from: "edit_band"), method: :delete, data: { confirm: 'Are you sure you want to delete this show?' } %>
+          </div>
+      <% end %>
+      <div class="shows">
+        <%= f.fields_for :shows, @band.shows do |q| %>
+          <div class="show">
+            <fieldset>
+              <div>
+                <%= q.label :title %>
+                <div>
+                  <%= q.text_field :title %>
+                </div>
+              </div>
+              <div>
+                <%= q.label :date %>
+                <div>
+                  <%= q.datetime_select :date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
+                </div>
+              </div>
+              <div>
+                <%= q.label :venue %>
+                <div>
+                  <%= q.collection_select(:location_id, @locations, :id, :venue) %><%= link_to "Add new location", new_location_path %>
+                </div>
+              </div>
+              
+            <fieldset>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to "Add show", new_show_path(band_id: @band.id) %>
+      </div>
+              
+    <%= f.submit edit ? "Update Band" : "Create Band" %> <%= link_to "Cancel", bands_path %>
+    </fieldset>
+  <% end %>
+</div>

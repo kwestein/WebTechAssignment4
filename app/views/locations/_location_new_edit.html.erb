@@ -1,0 +1,40 @@
+<div>
+  <%= link_to "Back to Bands Index", bands_path %>
+  <%= form_for @location, html: {class: 'form form-horizontal'} do |f| %>
+    <fieldset>
+      <div>
+        <%= f.label :venue %>
+        <div>
+          <%= f.text_field :venue %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :street_address %>
+        <div>
+          <%= f.text_field :street_address %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :city %>
+        <div>
+          <%= f.text_field :city %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :country %>
+        <div>
+          <%= f.text_field :country %>
+        </div>
+      </div>
+      <div>
+        <%= f.label :continent %>
+        <div>
+          <%= f.text_field :continent %>
+        </div>
+      </div>
+      
+    <fieldset>
+      <%= f.submit edit ? "Update Location" : "Create Location", class: "btn btn-primary" %> <%= link_to "Cancel", bands_path %>
+    </fieldset>
+  <% end %>
+</div>
