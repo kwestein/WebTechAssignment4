@@ -18,61 +18,6 @@
     <description>      Music that originates in traditional popular culture or that is written in such a style. Folk music is typically of unknown authorship    </description>
   </genre>
   <genre id="g2" title="Indie"/>
-  <band id="b2" genre="g1">
-    <name>Tallest Man on Earth</name>
-    <artist id="a3">
-      <name>Kristian Matsson</name>
-      <biography>        Kristian Matsson is a singer-songwriter from Dalarna, Sweden. Since 2006, he has released three full-length albums and two EPs. He performs under the stage name The Tallest Man on Earth. He is known for recording and producing his own records in whichever home he is currently living and states that the connection between his voice and guitar is so strong, he rarely records them as separately tracked performances      </biography>
-      <birthday>
-        <day>30</day>
-        <month>4</month>
-        <year>1983</year>
-      </birthday>
-      <role>Lead Singer</role>
-      <join_date>
-        <day>10</day>
-        <month>6</month>
-        <year>2003</year>
-      </join_date>
-    </artist>
-    <album id="al3">
-      <title>There's no Leaving Now</title>
-      <release_date>
-        <day>18</day>
-        <month>9</month>
-        <year>2012</year>
-      </release_date>
-      <song id="s4" performedBy="b2">
-        <title>The Dreamer</title>
-        <ranking>2</ranking>
-      </song>
-    </album>
-    <album id="al2">
-      <title>The Wild Hunt</title>
-      <release_date>
-        <day>5</day>
-        <month>5</month>
-        <year>2010</year>
-      </release_date>
-      <song id="s3" performedBy="b2">
-        <title>Criminals</title>
-        <ranking>3</ranking>
-      </song>
-      <song id="" performedBy="b2">
-        <title>sgfsdfzg</title>
-        <ranking>4</ranking>
-      </song>
-    </album>
-    <show id="u2" location="l2">
-      <title>The Tallest Man On Earth North American Tour</title>
-      <date>
-        <day>29</day>
-        <month>10</month>
-        <year>2013</year>
-      </date>
-      <performer ref="b2"/>
-    </show>
-  </band>
   <band id="b1" genre="g2">
     <name>The Lumineers</name>
     <artist id="a2">
@@ -145,5 +90,60 @@
         <ranking>2</ranking>
       </song>
     </album>
+  </band>
+  <band id="b2" genre="g1">
+    <name>Tallest Man on Earth</name>
+    <artist id="a3">
+      <name>Kristian Matsson</name>
+      <biography>        Kristian Matsson is a singer-songwriter from Dalarna, Sweden. Since 2006, he has released three full-length albums and two EPs. He performs under the stage name The Tallest Man on Earth. He is known for recording and producing his own records in whichever home he is currently living and states that the connection between his voice and guitar is so strong, he rarely records them as separately tracked performances      </biography>
+      <birthday>
+        <day>30</day>
+        <month>4</month>
+        <year>1983</year>
+      </birthday>
+      <role>Singer</role>
+      <join_date>
+        <day>10</day>
+        <month>6</month>
+        <year>2003</year>
+      </join_date>
+    </artist>
+    <album id="al3">
+      <title>There's no Leaving Now</title>
+      <release_date>
+        <day>18</day>
+        <month>9</month>
+        <year>2012</year>
+      </release_date>
+      <song id="s4" performedBy="b2">
+        <title>The Dreamer</title>
+        <ranking>2</ranking>
+      </song>
+    </album>
+    <album id="al2">
+      <title>The Wild Hunt</title>
+      <release_date>
+        <day>5</day>
+        <month>5</month>
+        <year>2010</year>
+      </release_date>
+      <song id="s3" performedBy="b2">
+        <title>Criminals</title>
+        <ranking>3</ranking>
+      </song>
+      <song id="" performedBy="b2">
+        <title>sgfsdfzg</title>
+        <ranking>4</ranking>
+      </song>
+    </album>
+    <show id="u2" location="l2">
+      <title>The Tallest Man On Earth North American Tour</title>
+      <date>
+        <day>29</day>
+        <month>10</month>
+        <year>2013</year>
+      </date>
+      <performer ref="b2"/>
+    </show>
   </band>
 </collection>

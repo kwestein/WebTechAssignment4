@@ -6,4 +6,7 @@ class Band < ActiveRecord::Base
 
 	validates :name, uniqueness: true
 	validates :name, presence: true
+
+	accepts_nested_attributes_for :shows, reject_if: proc { |attributes| attributes['title'].blank? }, allow_destroy: true
+	accepts_nested_attributes_for :artists, reject_if: proc { |attributes| attributes['name'].blank? }, allow_destroy: true
 end

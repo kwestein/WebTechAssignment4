@@ -12,11 +12,12 @@ class BandsController < ApplicationController
 
   def edit
   	@genres = Genre.all
+    @locations = Location.all
   	@new_band = Band.new
   end
 
   def update
-  	@band.update_attributes(params.require(:band).permit(:name, :description, :genre_id, artists_attributes: [ :id, :name, :biography, :role, :birthday, :join_date, :_destroy ]))
+  	@band.update_attributes(params.require(:band).permit(:name, :description, :genre_id, artists_attributes: [ :id, :name, :biography, :role, :birthday, :join_date, :_destroy ], shows_attributes: [ :title, :date, :venue, :location_id, :_destroy ]))
     writeToXML
 	  redirect_to band_path(@band)
   end
@@ -33,7 +34,7 @@ class BandsController < ApplicationController
   end
 
   def create
-    @genre = Band.create(params.require(:band).permit(:name, :description, :genre_id))
+    @genre = Band.create(params.require(:band).permit(:name, :description, :genre_id, artists_attributes: [ :id, :name, :biography, :role, :birthday, :join_date, :_destroy ], shows_attributes: [ :title, :date, :venue, :location_id, :_destroy ]))
     writeToXML
     redirect_to band_path(@genre)
   end
