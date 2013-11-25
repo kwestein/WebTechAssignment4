@@ -42,7 +42,7 @@
   <% end %>
 </div>
 
-<div style="display:none">
+<div class="hidden">
   <% add_song(@new_album) %>
   <%= form_for @new_album do |f| %>
     <%= f.fields_for :songs do |q| %>

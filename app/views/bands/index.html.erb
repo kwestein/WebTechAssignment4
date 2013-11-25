@@ -1,9 +1,9 @@
-<div style="padding:20px;">
-	<h1 style="text-align:center">Bands</h1>
-	<p style="text-align:center"><%= link_to "Add New Band", new_band_path %></p>
+<div class="padded">
+	<h1 class="centered">Bands</h1>
+	<p class="centered"><%= link_to "Add New Band", new_band_path %></p>
 
 	<!-- inline display not happening -->
-	<ul style="display: inline; list-style-type: none; text-align:center" class="nav nav-pills">
+	<ul class="search-list centered">
 		<li>
 			<%= form_tag search_names_bands_path, class: 'form-search' do %>
         		<%= text_field_tag :name, params[:name], class: 'span2', placeholder: 'Search by Name' %>
@@ -27,31 +27,31 @@
     	</li>
     </ul>
 
-    <span style="text-align:center"><%= will_paginate @bands %></span>
+    <span class="centered"><%= will_paginate @bands %></span>
 	<% @bands.each do |band| %>
-		<div style=" background-color:#D0D0D0; padding: 10px">
-			<h2 style="text-decoration:underline; margin-bottom:0"><%= link_to band.name, band_path(band) %></h2>
-			<div style="margin: 5px 0 0 0">
+		<div class="container">
+			<h2 class="title centered"><%= link_to band.name, band_path(band) %></h2>
+			<div class="top-margined">
 				<b>Genre: </b><%= link_to band.genre.title, genre_path(band.genre) %>
 			</div>
 			<% if band.description.present? %>
-				<div style="margin-top:5px" >
+				<div class="top-margined" >
 					<b>Description: </b><%= band.description %>
 				</div>
 			<% end %>
-			<div style="margin-top:5px">
+			<div class="top-margined">
 				<b>Members: </b>
 				<% band.artists.each do |artist| %>
 					<%= link_to artist.name, artist_path(artist) %>
 				<% end %>
 			</div>
-			<div style="margin-top:5px">
+			<div class="top-margined">
 				<b>Albums: </b>
 				<% band.albums.each do |album| %>
 					<%= link_to album.title, album_path(album) %>
 				<% end %>
 			</div>
-			<div style="margin-top:5px">
+			<div class="top-margined">
 				<b>Shows: </b>
 				<% band.shows.each do |show| %>
 					<%= link_to show.title, show_path(show) %>
