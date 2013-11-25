@@ -2,21 +2,21 @@
   <%= link_to "Back to Bands Index", bands_path %>
   <%= form_for @album, html: {class: 'form form-horizontal'} do |f| %>
     <fieldset>
-      <div class="control-group">
-        <%= f.label :title, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :title, class: 'span6' %>
+      <div>
+        <%= f.label :title%>
+        <div>
+          <%= f.text_field :title %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label "Band", class: 'control-label' %>
-        <div class="controls">
+      <div>
+        <%= f.label "Band"%>
+        <div>
           <%= f.collection_select(:band_id, @bands, :id, :name) %><%= link_to "Add new band", new_band_path %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :release_date, class: 'control-label' %>
-        <div class="controls">
+      <div>
+        <%= f.label :release_date %>
+        <div>
           <%= f.datetime_select :release_date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
         </div>
       </div>
@@ -24,11 +24,11 @@
       <div class="songs">
       <%= f.fields_for :songs, @album.songs do |q| %>
         <div class="song">
-          <div class="control-group">
-            <%= q.label :title, class: 'control-label' %>: 
-            <%= q.text_field :title, class: 'span6' %> 
-            <%= q.label :ranking, class: 'control-label' %>: 
-            <%= q.text_field :ranking, class: 'span6' %>
+          <div>
+            <%= q.label :title %>: 
+            <%= q.text_field :title %> 
+            <%= q.label :ranking %>: 
+            <%= q.text_field :ranking %>
             <%= link_to "Delete", song_path(q.object), method: :delete, data: { confirm: 'Are you sure you want to delete this song?' } %>
           </div>
         </div>
@@ -47,11 +47,11 @@
   <%= form_for @new_album do |f| %>
     <%= f.fields_for :songs do |q| %>
       <div id='song-template'>
-        <div class="control-group">
-          <%= q.label :title, class: 'control-label' %>: 
-          <%= q.text_field :title, class: 'span6' %> 
-          <%= q.label :ranking, class: 'control-label' %>: 
-          <%= q.text_field :ranking, class: 'span6' %>
+        <div>
+          <%= q.label :title %>: 
+          <%= q.text_field :title %> 
+          <%= q.label :ranking %>: 
+          <%= q.text_field :ranking %>
         </div>
       </div>
     <% end %>

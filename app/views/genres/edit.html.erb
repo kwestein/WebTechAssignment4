@@ -2,16 +2,16 @@
   <%= link_to "Back to Bands Index", bands_path %>
   <%= form_for @genre, html: {class: 'form form-horizontal'} do |f| %>
     <fieldset>
-      <div class="control-group">
-        <%= f.label :title, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :title, class: 'span6' %>
+      <div>
+        <%= f.label :title %>
+        <div>
+          <%= f.text_field :title %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :description, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_area :description, rows: 5, class: 'span6' %>
+      <div>
+        <%= f.label :description %>
+        <div>
+          <%= f.text_area :description, rows: 5 %>
         </div>
       </div>
       

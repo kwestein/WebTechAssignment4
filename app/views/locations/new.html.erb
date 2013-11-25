@@ -2,34 +2,34 @@
   <%= link_to "Back to Bands Index", bands_path %>
   <%= form_for @location, html: {class: 'form form-horizontal'} do |f| %>
     <fieldset>
-      <div class="control-group">
-        <%= f.label :venue, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :venue, class: 'span6' %>
+      <div>
+        <%= f.label :venue %>
+        <div>
+          <%= f.text_field :venue %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :street_address, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :street_address, rows: 5, class: 'span6' %>
+      <div>
+        <%= f.label :street_address %>
+        <div>
+          <%= f.text_field :street_address, rows: 5 %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :city, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :city, class: 'span6' %>
+      <div>
+        <%= f.label :city %>
+        <div>
+          <%= f.text_field :city %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :country, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :country, rows: 5, class: 'span6' %>
+      <div>
+        <%= f.label :country %>
+        <div>
+          <%= f.text_field :country, rows: 5 %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :continent, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :continent, class: 'span6' %>
+      <div>
+        <%= f.label :continent %>
+        <div>
+          <%= f.text_field :continent %>
         </div>
       </div>
       
