@@ -1,0 +1,20 @@
+<div class="padded">
+	<%= render partial: 'common/application_header' %>
+	<div class="container">
+		<h2 class="title centered">Songs</h2>
+		<table class="top-margined">
+			<tr>
+				<th class="songs-listing">Title</th>
+				<th class="songs-listing">By</th>
+				<th class="songs-listing">Ranking</th>
+			</tr>
+			<% @songs.each do |song| %>
+				<tr class='top-margined'>
+					<td class="songs-listing"><%= song.title %></td>
+					<td class="songs-listing"><%=song.album.band.name %></td>
+					<td class="songs-listing"><%=song.ranking %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>

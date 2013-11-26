@@ -1,5 +1,5 @@
 <div class="padded">
-	<p><%= link_to "Back to Bands Index", bands_path %></p>
+	<%= render partial: 'common/application_header' %>
 	<% if @found %>
 		<% @bands.each do |band| %>
 			<div class="container">

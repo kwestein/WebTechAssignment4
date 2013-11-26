@@ -30,6 +30,10 @@ class GenresController < ApplicationController
 		redirect_to genre_path(@genre)
 	end
 
+	def index 
+		@genres = Genre.all.order('title')
+	end
+
 	def load_genre
 		@genre = Genre.find(params[:id])
 	end

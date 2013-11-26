@@ -6,7 +6,7 @@ var ready = function() {
     $('.songs').append("<div class='song'>"+html+"</div>");
   });
 
-    // TODO: only working for first artist!
+  // TODO: only working for first artist!
   $('.edit-artist').click(function(e) {
     var member_id = $('.edit-artist').attr('member-id');
     console.log(member_id);

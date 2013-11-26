@@ -15,5 +15,5 @@ WebTechAssignment4::Application.routes.draw do
   resources :locations
   resources :shows
   resources :albums
-  resources :songs, only: [:destroy]
+  resources :songs, only: [:destroy, :index]
 end

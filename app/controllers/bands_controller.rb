@@ -2,7 +2,7 @@ class BandsController < ApplicationController
 	before_filter :load_band, only: [:show, :update, :edit, :destroy]
 
   def index
-    @bands = Band.paginate(:page => params[:page], :per_page => 2)
+    @bands = Band.paginate(:page => params[:page], :per_page => 2).order('name')
     @genres = Genre.all
     @albums = Album.all
   end
@@ -32,6 +32,7 @@ class BandsController < ApplicationController
     @band = Band.new
     @new_band = Band.new
     @genres = Genre.all
+    @locations = Location.all
   end
 
   def create

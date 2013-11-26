@@ -31,13 +31,17 @@ class AlbumsController < ApplicationController
 		@album = Album.new
 		@new_album = Album.new
 		@bands = Band.all
-		@album.band_id = Band.find(params[:band_id]).id
+		@album.band_id = Band.find(params[:band_id]).id if params[:band_id].present?
 	end
 
 	def create
 		@album = Album.create(params.require(:album).permit(:title, :release_date, :band_id, songs_attributes: [ :id, :title, :ranking ]))
 		writeToXML
 		redirect_to edit_band_path(@album.band)
+	end
+
+	def index
+		@albums = Album.all.order('title')
 	end
 
 	def load_album

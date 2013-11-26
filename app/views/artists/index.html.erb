@@ -1,0 +1,10 @@
+<div class="padded">
+	<%= render partial: 'common/application_header' %>
+	<div class="container">
+		<h2 class="title centered">Artists</h2>
+		<p class="centered"><%= link_to "Add New Artist", new_artist_path %></p>
+		<% @artists.each do |artist| %>
+			<p><%= link_to artist.name, artist_path(artist) %></p>
+		<% end %>
+	</div>
+</div>

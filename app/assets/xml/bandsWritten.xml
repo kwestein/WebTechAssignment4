@@ -17,14 +17,12 @@
   <genre id="g1" title="Folk">
     <description>      Music that originates in traditional popular culture or that is written in such a style. Folk music is typically of unknown authorship    </description>
   </genre>
-  <genre id="g2" title="Indie"/>
+  <genre id="" title="Rock"/>
+  <genre id="g2" title="Indie">
+    <description>;ksdfjng</description>
+  </genre>
   <band id="b1" genre="g2">
     <name>The Lumineers</name>
-    <artist id="">
-      <name>safgasdg</name>
-      <biography>safgsdf</biography>
-      <role>asdfsad</role>
-    </artist>
     <artist id="a2">
       <name>Neyla Pekarek</name>
       <biography>        I have a teaching degree to teach music. I always wanted to be a choir teacher. I met the guys shortly after I graduated and I was looking for something to keep me busy before landing a teaching job. I answered a Craigslist ad, which is something I'd never do. I was feeling reckless, I guess.      </biography>
@@ -55,60 +53,22 @@
         <year>2008</year>
       </join_date>
     </artist>
-    <album id="">
-      <title>asfgasfg</title>
-      <song id="" performedBy="b1">
-        <title>sdf</title>
-        <ranking>2</ranking>
-      </song>
-    </album>
-    <album id="al1">
-      <title>The Lumineers</title>
-      <release_date>
-        <day>3</day>
-        <month>4</month>
-        <year>2012</year>
-      </release_date>
-      <song id="s2" performedBy="b1">
-        <title>Slow it Down</title>
-        <ranking>4</ranking>
-      </song>
-      <song id="s1" performedBy="b1">
-        <title>Dead Sea</title>
-        <ranking>1</ranking>
-      </song>
-    </album>
-  </band>
-  <band id="" genre="g1">
-    <name>Engineering Band</name>
-    <artist id="">
-      <name>Member1</name>
-      <biography>sdfasdf</biography>
-      <role>sdfgasdfg</role>
-    </artist>
-    <album id="">
-      <title>asfdgdsafg</title>
-      <song id="" performedBy="">
-        <title>asdfgdsafg</title>
-        <ranking>2</ranking>
-      </song>
-    </album>
+    <show id="u1" location="l1">
+      <title>The Lumineers World Tour</title>
+      <date>
+        <day>23</day>
+        <month>10</month>
+        <year>2013</year>
+      </date>
+      <performer ref="b1"/>
+    </show>
   </band>
   <band id="b2" genre="g1">
     <name>Tallest Man on Earth</name>
     <artist id="">
-      <name>Johan Westeinde</name>
-      <role>Backup dancer</role>
-    </artist>
-    <artist id="">
       <name>Kirsten Westeinde</name>
       <biography>Im cool</biography>
       <role>Dancer</role>
-    </artist>
-    <artist id="">
-      <name>wefasd</name>
-      <biography>sdfgasdgf</biography>
-      <role>asdfgasdf</role>
     </artist>
     <artist id="a3">
       <name>Kristian Matsson</name>
@@ -170,6 +130,26 @@
         <year>2013</year>
       </date>
       <performer ref="b2"/>
+    </show>
+  </band>
+  <band id="" genre="">
+    <name>The Beatles</name>
+    <artist id="">
+      <name>Ringo Starr</name>
+      <role>Drummer</role>
+    </artist>
+    <artist id="">
+      <name>John Lennon</name>
+      <role>Singer</role>
+    </artist>
+    <show id="" location="l1">
+      <title>The Beatles Reunion</title>
+      <date>
+        <day>7</day>
+        <month>9</month>
+        <year>1929</year>
+      </date>
+      <performer ref=""/>
     </show>
   </band>
 </collection>

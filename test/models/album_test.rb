@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class AlbumTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "#create creates an album" do
+    assert_difference "Album.count" do
+      Album.create(title: "New Album")       
+    end
+  end
 end

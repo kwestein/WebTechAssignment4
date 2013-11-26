@@ -10,4 +10,8 @@ class SongsController < ApplicationController
 	  writeToXML
 	  redirect_to edit_album_path(album)
 	end
+
+	def index 
+		@songs = Song.all.order('title')
+	end
 end

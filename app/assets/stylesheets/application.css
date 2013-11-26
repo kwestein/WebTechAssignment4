@@ -21,3 +21,8 @@
 .top-margined {margin-top: 5px;}
 .search-list {display: inline; list-style-type: none;}
 .toggle-visibility {display:none;}
+.dashboard-header-nav { margin-top:10px; margin-bottom:10px;}
+.dashboard-header-nav td {background-color:#D0D0D0; padding:10px; margin-right:20px;}
+.dashboard-header-nav td a {text-decoration: none; color: black;}
+.dashboard-header-nav td.active {background-color:#A0A0A0 ;}
+.songs-listing {padding: 0 20px; text-align:left;}

@@ -1,5 +1,5 @@
 <div>
-  <%= link_to "Back to Bands Index", bands_path %>
+  <%= render partial: 'common/application_header' %>
   <%= form_for @artist, html: {class: 'form form-horizontal'} do |f| %>
     <fieldset>
       <div>

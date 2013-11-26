@@ -30,7 +30,7 @@ class ShowsController < ApplicationController
 	def new
 		@show = Show.new
 		@bands = Band.all
-		@show.band_id = Band.find(params[:band_id]).id
+		@show.band_id = Band.find(params[:band_id]).id if params[:band_id].present?
 		@locations = Location.all
 	end
 
@@ -38,6 +38,10 @@ class ShowsController < ApplicationController
 		@show = Show.create(params.require(:show).permit(:title, :date, :venue, :location_id, :band_id))
 		writeToXML
 		redirect_to edit_band_path(@show.band)
+	end
+
+	def index
+		@shows = Show.all.order('title')
 	end
 
 	def load_show

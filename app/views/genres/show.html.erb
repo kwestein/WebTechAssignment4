@@ -1,4 +1,4 @@
-<%= link_to "Back to Bands Index", bands_path %>
+<%= render partial: 'common/application_header' %>
 <h1 class="centered"><%= @genre.title %></h1>
 <p class="cenetered">
 	<%= link_to "Edit", edit_genre_path(@genre) %>

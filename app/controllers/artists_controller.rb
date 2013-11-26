@@ -38,6 +38,10 @@ class ArtistsController < ApplicationController
 		@bands = Band.all
 	end
 
+	def index
+		@artists = Artist.all.order('name')
+	end
+
 	def load_artist
 		@artist = Artist.find(params[:id])
 	end

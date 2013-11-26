@@ -1,0 +1,10 @@
+<div class="padded">
+	<%= render partial: 'common/application_header' %>
+	<div class="container">
+		<h2 class="title centered">Shows</h2>
+		<p class="centered"><%= link_to "Add New Show", new_show_path %></p>
+		<% @shows.each do |show| %>
+			<p><%= link_to show.title, show_path(show) %></p>
+		<% end %>
+	</div>
+</div>

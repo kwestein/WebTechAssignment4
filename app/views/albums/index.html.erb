@@ -1,0 +1,10 @@
+<div class="padded">
+	<%= render partial: 'common/application_header' %>
+	<div class="container">
+		<h2 class="title centered">Albums</h2>
+		<p class="centered"><%= link_to "Add New Album", new_album_path %></p>
+		<% @albums.each do |album| %>
+			<p><%= link_to album.title, album_path(album) %></p>
+		<% end %>
+	</div>
+</div>
