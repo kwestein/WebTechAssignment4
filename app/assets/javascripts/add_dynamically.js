@@ -6,12 +6,16 @@ var ready = function() {
     $('.songs').append("<div class='song'>"+html+"</div>");
   });
 
-  // TODO: only working for first artist!
   $('.edit-artist').click(function(e) {
-    var member_id = $('.edit-artist').attr('member-id');
-    console.log(member_id);
+    var member_id = $(this).attr('member-id');
     var artist_info = $(".member[data-id= '"+member_id+"']");
     artist_info.css("display", "block");
+  });
+
+  $('.done-editing-artist').click(function(e) {
+    var member_id = $(this).attr('member-id');
+    var artist_info = $(".member[data-id= '"+member_id+"']");
+    artist_info.css("display", "none");
   });
 
   $('#new-artist').click(function(e) {

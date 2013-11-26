@@ -65,11 +65,6 @@
   </band>
   <band id="b2" genre="g1">
     <name>Tallest Man on Earth</name>
-    <artist id="">
-      <name>Kirsten Westeinde</name>
-      <biography>Im cool</biography>
-      <role>Dancer</role>
-    </artist>
     <artist id="a3">
       <name>Kristian Matsson</name>
       <biography>        Kristian Matsson is a singer-songwriter from Dalarna, Sweden. Since 2006, he has released three full-length albums and two EPs. He performs under the stage name The Tallest Man on Earth. He is known for recording and producing his own records in whichever home he is currently living and states that the connection between his voice and guitar is so strong, he rarely records them as separately tracked performances      </biography>
@@ -84,6 +79,11 @@
         <month>6</month>
         <year>2003</year>
       </join_date>
+    </artist>
+    <artist id="">
+      <name>Kirsten Westeinde</name>
+      <biography>Im cool, so cool, so so cool</biography>
+      <role>Dancer</role>
     </artist>
     <album id="al3">
       <title>There's no Leaving Now</title>
@@ -135,12 +135,12 @@
   <band id="" genre="">
     <name>The Beatles</name>
     <artist id="">
-      <name>Ringo Starr</name>
-      <role>Drummer</role>
-    </artist>
-    <artist id="">
       <name>John Lennon</name>
       <role>Singer</role>
+    </artist>
+    <artist id="">
+      <name>Ringo Starr</name>
+      <role>Drummer</role>
     </artist>
     <show id="" location="l1">
       <title>The Beatles Reunion</title>
