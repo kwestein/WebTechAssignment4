@@ -18,6 +18,18 @@ var ready = function() {
     artist_info.css("display", "none");
   });
 
+  $('.edit-show').click(function(e) {
+    var show_id = $(this).attr('show-id');
+    var show_info = $(".show[data-id= '"+show_id+"']");
+    show_info.css("display", "block");
+  });
+
+  $('.done-editing-show').click(function(e) {
+    var show_id = $(this).attr('show-id');
+    var show_info = $(".show[data-id= '"+show_id+"']");
+    show_info.css("display", "none");
+  });
+
   $('#new-artist').click(function(e) {
     var artist_template = '#artist-template';
     var next_id = $('.members .member').length;
