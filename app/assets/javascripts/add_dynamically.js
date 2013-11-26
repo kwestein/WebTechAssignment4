@@ -6,7 +6,7 @@ var ready = function() {
     $('.songs').append("<div class='song'>"+html+"</div>");
   });
 
-    //Only working for first artist!
+    // TODO: only working for first artist!
   $('.edit-artist').click(function(e) {
     var member_id = $('.edit-artist').attr('member-id');
     console.log(member_id);
@@ -18,8 +18,14 @@ var ready = function() {
     var artist_template = '#artist-template';
     var next_id = $('.members .member').length;
     var html = $(artist_template).html().replace(/_\d+/g, "_"+next_id).replace(/\[\d+/g, "["+next_id);
-    console.log(html);
     $('.members').append("<div class='member'>"+html+"</div>");
+  });
+
+  $('#new-show').click(function(e) {
+    var show_template = '#show-template';
+    var next_id = $('.shows .show').length;
+    var html = $(show_template).html().replace(/_\d+/g, "_"+next_id).replace(/\[\d+/g, "["+next_id);
+    $('.shows').append("<div class='show'>"+html+"</div>");
   });
 };
 

@@ -114,7 +114,7 @@
         <% end %>
       </div>
       <div>
-        <%= link_to "Add show", new_show_path(band_id: @band.id) %>
+        <a href="javascript:void(0)" id="new-show">Add Show</a>
       </div>
               
     <%= f.submit edit ? "Update Band" : "Create Band" %> <%= link_to "Cancel", bands_path %>
@@ -162,6 +162,36 @@
               </div>
               
             </fieldset>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= form_for @new_band do |f| %>
+    <%= f.fields_for :shows do |q| %>
+      <div id='show-template'>
+        <div>
+          <fieldset>
+              <div>
+                <%= q.label :title %>
+                <div>
+                  <%= q.text_field :title %>
+                </div>
+              </div>
+              <div>
+                <%= q.label :date %>
+                <div>
+                  <%= q.datetime_select :date, { include_blank: true, start_year: 1920, end_year: 2013 } %>
+                </div>
+              </div>
+              <div>
+                <%= q.label :venue %>
+                <div>
+                  <%= q.collection_select(:location_id, @locations, :id, :venue) %><%= link_to "Add new location", new_location_path %>
+                </div>
+              </div>
+              
+            <fieldset>
         </div>
       </div>
     <% end %>

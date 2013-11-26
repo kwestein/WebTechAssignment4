@@ -154,6 +154,15 @@
       </song>
     </album>
     <show id="" location="l2">
+      <title>Tha Tallest Man on Earth does Iceland</title>
+      <date>
+        <day>9</day>
+        <month>5</month>
+        <year>1926</year>
+      </date>
+      <performer ref="b2"/>
+    </show>
+    <show id="" location="l2">
       <title>The Tallest Man On Earth North American Tour</title>
       <date>
         <day>29</day>
