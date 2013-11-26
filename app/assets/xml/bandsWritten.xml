@@ -20,15 +20,20 @@
   <genre id="g2" title="Indie"/>
   <band id="b1" genre="g2">
     <name>The Lumineers</name>
+    <artist id="">
+      <name>safgasdg</name>
+      <biography>safgsdf</biography>
+      <role>asdfsad</role>
+    </artist>
     <artist id="a2">
       <name>Neyla Pekarek</name>
-      <biography>I have a teaching degree to teach music. I always wanted to be a choir teacher. I met the guys shortly after I graduated and I was looking for something to keep me busy before landing a teaching job. I answered a Craigslist ad, which is something I'd never do. I was feeling reckless, I guess.      </biography>
+      <biography>        I have a teaching degree to teach music. I always wanted to be a choir teacher. I met the guys shortly after I graduated and I was looking for something to keep me busy before landing a teaching job. I answered a Craigslist ad, which is something I'd never do. I was feeling reckless, I guess.      </biography>
       <birthday>
         <day>3</day>
         <month>6</month>
         <year>1988</year>
       </birthday>
-      <role>Cellisto</role>
+      <role>Cellist</role>
       <join_date>
         <day>21</day>
         <month>7</month>
@@ -58,7 +63,7 @@
       </song>
     </album>
     <album id="al1">
-      <title>The Lumineerss</title>
+      <title>The Lumineers</title>
       <release_date>
         <day>3</day>
         <month>4</month>
@@ -70,18 +75,9 @@
       </song>
       <song id="s1" performedBy="b1">
         <title>Dead Sea</title>
-        <ranking>2</ranking>
+        <ranking>1</ranking>
       </song>
     </album>
-    <show id="u1" location="l1">
-      <title>The Lumineers World Tour</title>
-      <date>
-        <day>23</day>
-        <month>10</month>
-        <year>2013</year>
-      </date>
-      <performer ref="b1"/>
-    </show>
   </band>
   <band id="" genre="g1">
     <name>Engineering Band</name>
@@ -100,6 +96,20 @@
   </band>
   <band id="b2" genre="g1">
     <name>Tallest Man on Earth</name>
+    <artist id="">
+      <name>Johan Westeinde</name>
+      <role>Backup dancer</role>
+    </artist>
+    <artist id="">
+      <name>Kirsten Westeinde</name>
+      <biography>Im cool</biography>
+      <role>Dancer</role>
+    </artist>
+    <artist id="">
+      <name>wefasd</name>
+      <biography>sdfgasdgf</biography>
+      <role>asdfgasdf</role>
+    </artist>
     <artist id="a3">
       <name>Kristian Matsson</name>
       <biography>        Kristian Matsson is a singer-songwriter from Dalarna, Sweden. Since 2006, he has released three full-length albums and two EPs. He performs under the stage name The Tallest Man on Earth. He is known for recording and producing his own records in whichever home he is currently living and states that the connection between his voice and guitar is so strong, he rarely records them as separately tracked performances      </biography>
@@ -108,7 +118,7 @@
         <month>4</month>
         <year>1983</year>
       </birthday>
-      <role>Singer</role>
+      <role>Lead Singer</role>
       <join_date>
         <day>10</day>
         <month>6</month>
@@ -143,7 +153,7 @@
         <ranking>4</ranking>
       </song>
     </album>
-    <show id="u2" location="l2">
+    <show id="" location="l2">
       <title>The Tallest Man On Earth North American Tour</title>
       <date>
         <day>29</day>
