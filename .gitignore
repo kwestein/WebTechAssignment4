@@ -16,4 +16,4 @@
 /tmp
 
 #Ignore XML file that gets written to everytime
-/app/assets/xml/bandsWritten.xml
+/app/assets/xml
