@@ -21,6 +21,7 @@
   <genre id="g2" title="Indie">
     <description>;ksdfjng</description>
   </genre>
+  <genre id="" title="Genre with no band"/>
   <band id="b1" genre="g2">
     <name>The Lumineers</name>
     <artist id="a2">
@@ -53,6 +54,22 @@
         <year>2008</year>
       </join_date>
     </artist>
+    <album id="al1">
+      <title>The Lumineers</title>
+      <release_date>
+        <day>3</day>
+        <month>4</month>
+        <year>2012</year>
+      </release_date>
+      <song id="s1" performedBy="b1">
+        <title>Dead Sea</title>
+        <ranking>1</ranking>
+      </song>
+      <song id="s2" performedBy="b1">
+        <title>Slow it Down</title>
+        <ranking>4</ranking>
+      </song>
+    </album>
     <show id="u1" location="l1">
       <title>The Lumineers World Tour</title>
       <date>
