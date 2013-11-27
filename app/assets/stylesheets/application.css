@@ -16,10 +16,12 @@
 .hidden {display:none;}
 .padded {padding:20px;}
 .container {background-color:#D0D0D0; padding: 10px;}
+.container2 {background-color:#A0A0A0; padding:10px;}
 .title {text-decoration:underline; margin-bottom:0; }
 .centered {text-align:center;}
 .top-margined {margin-top: 5px;}
-.search-list {display: inline; list-style-type: none;}
+.search-list {list-style-type: none;}
+.search-list li {display:inline-block; padding: 0 20px;}
 .toggle-visibility {display:none;}
 .dashboard-header-nav { margin-top:10px; margin-bottom:10px;}
 .dashboard-header-nav td {background-color:#D0D0D0; padding:10px; margin-right:20px;}

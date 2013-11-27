@@ -1,64 +1,64 @@
 <div class="padded">
 	<%= render partial: 'common/application_header' %>
-	<h1 class="centered">Bands</h1>
-	<p class="centered"><%= link_to "Add New Band", new_band_path %></p>
+	<div class="container">
+		<h2 class="title centered">Bands</h1>
+		<p class="centered"><%= link_to "Add New Band", new_band_path %></p>
 
-	<!-- inline display not happening -->
-	<ul class="search-list centered">
-		<li>
-			<%= form_tag search_names_bands_path, class: 'form-search' do %>
-        		<%= text_field_tag :name, params[:name], class: 'span2', placeholder: 'Search by Name' %>
-    		<% end %>
-   		</li>
-   		<li>OR</li>
-   		<li>
-    		<%= form_tag search_genres_bands_path, class: 'form-search' do %>
-        		<%= label_tag "Search by Genre", "Search by Genre" %>
-        		<%= select_tag "genre_id", options_from_collection_for_select(@genres, :id, :title )%>
-        		<%= submit_tag "Search" %>
-    		<% end %>
-    	</li>
-    	<li>OR</li>
-   		<li>
-    		<%= form_tag search_albums_bands_path, class: 'form-search' do %>
-        		<%= label_tag "Search by Album", "Search by Album" %>
-        		<%= select_tag "album_id", options_from_collection_for_select(@albums, :id, :title )%>
-        		<%= submit_tag "Search" %>
-    		<% end %>
-    	</li>
-    </ul>
+		<!-- inline display not happening -->
+		<ul class="search-list centered">
+			<li>
+				<%= form_tag search_names_bands_path, class: 'form-search' do %>
+	        		<%= text_field_tag :name, params[:name], class: 'span2', placeholder: 'Search by Name' %>
+	    		<% end %>
+	   		</li>
+	   		<li>
+	    		<%= form_tag search_genres_bands_path, class: 'form-search' do %>
+	        		<%= label_tag "Search by Genre", "Search by Genre" %>
+	        		<%= select_tag "genre_id", options_from_collection_for_select(@genres, :id, :title )%>
+	        		<%= submit_tag "Search" %>
+	    		<% end %>
+	    	</li>
+	   		<li>
+	    		<%= form_tag search_albums_bands_path, class: 'form-search' do %>
+	        		<%= label_tag "Search by Album", "Search by Album" %>
+	        		<%= select_tag "album_id", options_from_collection_for_select(@albums, :id, :title )%>
+	        		<%= submit_tag "Search" %>
+	    		<% end %>
+	    	</li>
+	    </ul>
 
-    <span class="centered"><%= will_paginate @bands %></span>
-	<% @bands.each do |band| %>
-		<div class="container">
-			<h2 class="title centered"><%= link_to band.name, band_path(band) %></h2>
-			<div class="top-margined">
-				<b>Genre: </b><%= link_to band.genre.title, genre_path(band.genre) %>
-			</div>
-			<% if band.description.present? %>
-				<div class="top-margined" >
-					<b>Description: </b><%= band.description %>
+	    <span class="centered"><%= will_paginate @bands %></span>
+		<% @bands.each do |band| %>
+			<div class="container2">
+				<h2 class="title centered"><%= link_to band.name, band_path(band) %></h2>
+				<div class="top-margined">
+					<b>Genre: </b><%= link_to band.genre.title, genre_path(band.genre) %>
 				</div>
-			<% end %>
-			<div class="top-margined">
-				<b>Members: </b>
-				<% band.artists.each do |artist| %>
-					<%= link_to artist.name, artist_path(artist) %>
+				<% if band.description.present? %>
+					<div class="top-margined" >
+						<b>Description: </b><%= band.description %>
+					</div>
 				<% end %>
+				<div class="top-margined">
+					<b>Members: </b>
+					<% band.artists.each do |artist| %>
+						<%= link_to artist.name, artist_path(artist) %>
+					<% end %>
+				</div>
+				<div class="top-margined">
+					<b>Albums: </b>
+					<% band.albums.each do |album| %>
+						<%= link_to album.title, album_path(album) %>
+					<% end %>
+				</div>
+				<div class="top-margined">
+					<b>Shows: </b>
+					<% band.shows.each do |show| %>
+						<%= link_to show.title, show_path(show) %>
+					<% end %>
+				</div>
 			</div>
-			<div class="top-margined">
-				<b>Albums: </b>
-				<% band.albums.each do |album| %>
-					<%= link_to album.title, album_path(album) %>
-				<% end %>
-			</div>
-			<div class="top-margined">
-				<b>Shows: </b>
-				<% band.shows.each do |show| %>
-					<%= link_to show.title, show_path(show) %>
-				<% end %>
-			</div>
-		</div>
-		<br><br><br>
-	<% end %>
+			<br><br><br>
+		<% end %>
+	</div>
 </div>
