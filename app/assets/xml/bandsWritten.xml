@@ -149,7 +149,7 @@
       <performer ref="b2"/>
     </show>
   </band>
-  <band id="" genre="">
+  <band id="" genre="g1">
     <name>The Beatles</name>
     <artist id="">
       <name>John Lennon</name>

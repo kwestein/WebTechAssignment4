@@ -1,38 +1,40 @@
 <div class="padded">
 	<%= render partial: 'common/application_header' %>
 	<% if @found %>
-		<% @bands.each do |band| %>
-			<div class="container">
-				<h2 class="title"><%= link_to band.name, band_path(band) %></h2>
-				<div class="top-margined">
-					<b>Genre: </b><%= link_to band.genre.title, genre_path(band.genre) %>
-				</div>
-				<% if band.description.present? %>
-					<div class="top-margined" >
-						<b>Description: </b><%= band.description %>
+		<div class="container">
+			<% @bands.each do |band| %>
+				<div class="container2">
+					<h2 class="title"><%= link_to band.name, band_path(band) %></h2>
+					<div class="top-margined">
+						<b>Genre: </b><%= link_to band.genre.title, genre_path(band.genre) %>
 					</div>
-				<% end %>
-				<div class="top-margined">
-					<b>Members: </b>
-					<% band.artists.each do |artist| %>
-						<%= link_to artist.name, artist_path(artist) %>
+					<% if band.description.present? %>
+						<div class="top-margined" >
+							<b>Description: </b><%= band.description %>
+						</div>
 					<% end %>
+					<div class="top-margined">
+						<b>Members: </b>
+						<% band.artists.each do |artist| %>
+							<%= link_to artist.name, artist_path(artist) %>
+						<% end %>
+					</div>
+					<div class="top-margined">
+						<b>Albums: </b>
+						<% band.albums.each do |album| %>
+							<%= link_to album.title, album_path(album) %>
+						<% end %>
+					</div>
+					<div class=top-margined>
+						<b>Shows: </b>
+						<% band.shows.each do |show| %>
+							<%= link_to show.title, show_path(show) %>
+						<% end %>
+					</div>
 				</div>
-				<div class="top-margined">
-					<b>Albums: </b>
-					<% band.albums.each do |album| %>
-						<%= link_to album.title, album_path(album) %>
-					<% end %>
-				</div>
-				<div class=top-margined>
-					<b>Shows: </b>
-					<% band.shows.each do |show| %>
-						<%= link_to show.title, show_path(show) %>
-					<% end %>
-				</div>
-			</div>
-			<br><br><br>
-		<% end %>
+				<br><br><br>
+			<% end %>
+		</div>
 	<% else %>
 		<div class="container">
 			No band matched your search filter of genre: <%= @genre %>
